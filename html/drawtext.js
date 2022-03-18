@@ -1,3 +1,5 @@
+sound_play = false
+
 window.addEventListener('message', function(event) {
     if (event.data.type == "open") {
         
@@ -10,13 +12,27 @@ window.addEventListener('message', function(event) {
             color = '#4caf50'
         } else if(event.data.color == 'classic') {
             color = '#30475e'
-        }                     
+        }
+
+        if(event.data.sound)
+        {
+            var sound = new Audio('sound.mp3');
+	        sound.volume = 0.5;
+            
+            if(sound_play == false)
+            {
+                sound.play();
+                sound_play = true;
+            }
+        }
 
         $("#container").show().removeClass("slide-out").addClass("container")
-        $("#text").css('background-color' , color)
+        $("#container").css('border-color' , color)
         $("#text").html(event.data.text)
+
     } else if (event.data.type == "close") {
         $("#container").removeClass("container").addClass("slide-out")
+        sound_play = false;
     } else {
         $("#container").hide()
     }

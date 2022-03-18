@@ -18,10 +18,36 @@ Type accepted are:
 * error
 * classic
 
+To use bold in text :
+
+```
+<b>[E]</b> Enter
+```
+
+To use color in text :
+
+```
+<mark class="red">[E]</mark> Enter
+```
+
+Turn on/off sound :
+``To client.lua and set sound = false``
+
+To add custom color :
+drawtext.css:
+```
+mark.namecolor {
+    color: color u want;
+}
+
+And use <mark class="namecolor">Test<mark>
+```
+
+
 ## License
 
     qb-ui
-    Copyright (C) 2022 Zea Ra
+    Copyright (C) 2022 Zea Ra and edited by z0n
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

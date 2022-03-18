@@ -12,5 +12,6 @@ ui_page 'html/index.html'
 files {
     'html/index.html',
     'html/drawtext.js',
-    'html/drawtext.css'
+    'html/drawtext.css',
+    'html/sound.mp3'
 }

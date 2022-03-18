@@ -1,20 +1,17 @@
-local lasttext = {}
+local sound = true
 
 exports("showInteraction", function(text, type)
     if not type then type = "info" end
-    lasttext = text
     SendNUIMessage({
         type = "open",
         text = text,
         color = type,
+        sound = sound
     })
 end)
 
-exports("hideInteraction", function(type)
-    type = type and type or "info"
+exports("hideInteraction", function()
     SendNUIMessage({
-        type = "close",
-        text = lasttext,
-        color = type,
+        type = "close"
     })
 end)
